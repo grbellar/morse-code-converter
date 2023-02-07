@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+</style>
+
+<div class="d-flex flex-column justify-content-center align-items-center vh-100 bg-secondary">
+        <form class="m-3" id="convertText" action="{{ url_for('home') }}" method="post">
+            <textarea style="width: 500px; height: 250px; border-radius: 4px; font-family: 'Roboto Mono', monospace;"
+                      id="convert-text"
+                      name="convert-text"
+                      placeholder="Your message to convert..."></textarea>
+    </form>
+    <input class="bg-primary" form="convertText" value="Convert" type="submit" style="width: 500px; height: auto; font-family: 'Roboto Mono', sans-serif;">
+    <p class="m-3" style="font-size: 3.0rem">{{ morse_code }}</p>
+</div>
+{% endblock %}
