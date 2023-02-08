@@ -68,7 +68,8 @@ def get_bad_chars(message):
     bad_char_list = []
     for char in message:
         if char not in code_dict:
-            bad_char_list.append(char)
+            if char != "\r" and char != "\n":
+                bad_char_list.append(char)
     return bad_char_list
 
 
@@ -80,7 +81,8 @@ def convert(message):
         return message, bad_char_list
     else:
         for char in message:
-            morse_code = morse_code + code_dict[char]
+            if char != "\r" and char != "\n":
+                morse_code = morse_code + code_dict[char]
         return morse_code
 
 
