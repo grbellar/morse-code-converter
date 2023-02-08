@@ -38,6 +38,7 @@ code_dict = {
     " ": "/",
 }
 
+# need to add, 0-9 and also punctuation which I didn't know could be converted to Morse code
 
 def convert(message):
     clean_message = message.translate(str.maketrans("", "", string.punctuation))  # delete all punctuation from string
