@@ -64,13 +64,24 @@ code_dict = {
 }
 
 
+def get_bad_chars(message):
+    bad_char_list = []
+    for char in message:
+        if char not in code_dict:
+            bad_char_list.append(char)
+    return bad_char_list
+
+
 def convert(message):
-    clean_message = message.translate(str.maketrans("", "", string.punctuation))  # delete all punctuation from string
+    # clean_message = message.translate(str.maketrans("", "", string.punctuation))  # delete all punctuation from string
     morse_code = ""
-    for char in clean_message:
-        if char != "\r" and char != "\n":
+    bad_char_list = get_bad_chars(message)
+    if bad_char_list:  # if not empty
+        return message, bad_char_list
+    else:
+        for char in message:
             morse_code = morse_code + code_dict[char]
-    return morse_code
+        return morse_code
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -78,7 +89,19 @@ def home():
     if flask.request.method == "POST":
         message = flask.request.form['convert-text'].lower()
         morse_code = convert(message)
-        return flask.render_template("index.html", morse_code=morse_code)
+        # I am either a genius or have gone completely mad. There is no doubt a better way to highlight the bad chars
+        # but this is the only way I could think of to generate the html to highlight characters.
+        if type(morse_code) is tuple:
+            html = "<p class='m-3'>"
+            for char in morse_code[0]:
+                if char in morse_code[1]:  # if current char is in the bad_char_list, highlight it red
+                    html = html + f"<span style='color: red'>{char}</span>"
+                else:
+                    html = html + char
+            html = html + "</p>"
+            return flask.render_template("index.html", error=True, html=html)
+        else:
+            return flask.render_template("index.html", error=False, morse_code=morse_code)
     return flask.render_template("index.html")
 
 
