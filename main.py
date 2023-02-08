@@ -45,7 +45,22 @@ code_dict = {
     "7": f"{dah}{dah}{dit}{dit}{dit}",
     "8": f"{dah}{dah}{dah}{dit}{dit}",
     "9": f"{dah}{dah}{dah}{dah}{dit}",
-    "0": f"{dah}{dah}{dah}{dah}{dah}"
+    "0": f"{dah}{dah}{dah}{dah}{dah}",
+    ",": f"{dah}{dah}{dit}{dit}{dah}{dah}",
+    ".": f"{dit}{dah}{dit}{dah}{dit}{dah}",
+    "?": f"{dit}{dit}{dah}{dah}{dit}{dit}",
+    ";": f"{dah}{dit}{dah}{dit}{dah}{dit}",
+    ":": f"{dah}{dah}{dah}{dit}{dit}{dit}",
+    "/": f"{dah}{dit}{dit}{dah}{dit}",
+    "-": f"{dah}{dit}{dit}{dit}{dit}{dah}",
+    "'": f"{dit}{dah}{dah}{dah}{dah}{dit}",
+    '"': f"{dit}{dah}{dit}{dit}{dah}{dit}",
+    "(": f"{dah}{dit}{dah}{dah}{dit}",
+    ")": f"{dah}{dit}{dah}{dah}{dit}{dah}",
+    "=": f"{dah}{dit}{dit}{dit}{dah}",
+    "+": f"{dit}{dah}{dit}{dah}{dit}",
+    "X": f"{dah}{dit}{dit}{dah}",  # test lowercase version
+    "@": f"{dit}{dah}{dah}{dit}{dah}{dit}"
 }
 
 
