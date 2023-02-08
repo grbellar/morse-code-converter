@@ -36,9 +36,18 @@ code_dict = {
     "y": f"{dah}{dit}{dah}{dah} ",
     "z": f"{dah}{dah}{dit}{dit} ",
     " ": "/",
+    "1": f"{dit}{dah}{dah}{dah}{dah}",
+    "2": f"{dit}{dit}{dah}{dah}{dah}",
+    "3": f"{dit}{dit}{dit}{dah}{dah}",
+    "4": f"{dit}{dit}{dit}{dit}{dah}",
+    "5": f"{dit}{dit}{dit}{dit}{dit}",
+    "6": f"{dah}{dit}{dit}{dit}{dit}",
+    "7": f"{dah}{dah}{dit}{dit}{dit}",
+    "8": f"{dah}{dah}{dah}{dit}{dit}",
+    "9": f"{dah}{dah}{dah}{dah}{dit}",
+    "0": f"{dah}{dah}{dah}{dah}{dah}"
 }
 
-# need to add, 0-9 and also punctuation which I didn't know could be converted to Morse code
 
 def convert(message):
     clean_message = message.translate(str.maketrans("", "", string.punctuation))  # delete all punctuation from string
