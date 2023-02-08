@@ -59,7 +59,7 @@ code_dict = {
     ")": f"{dah}{dit}{dah}{dah}{dit}{dah}",
     "=": f"{dah}{dit}{dit}{dit}{dah}",
     "+": f"{dit}{dah}{dit}{dah}{dit}",
-    "X": f"{dah}{dit}{dit}{dah}",  # test lowercase version
+    "X": f"{dah}{dit}{dit}{dah}",  # TODO: supposed to be multipy sign but will also return letter "x" which is wrong
     "@": f"{dit}{dah}{dah}{dit}{dah}{dit}"
 }
 
